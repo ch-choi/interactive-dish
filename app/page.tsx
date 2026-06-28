@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import InfiniteGrid from "../components/hero/InfiniteGrid";
 import BottomNav from "../components/ui/BottomNav";
 import NavOverlays from "../components/ui/NavOverlays";
@@ -7,7 +8,9 @@ export default function Home() {
   return (
     <main className="relative w-full h-screen overflow-hidden">
       <InfiniteGrid />
-      <DetailOverlay />
+      <Suspense fallback={null}>
+        <DetailOverlay />
+      </Suspense>
       <NavOverlays />
       <BottomNav />
     </main>
