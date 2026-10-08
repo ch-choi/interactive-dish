@@ -27,3 +27,16 @@
 @media(max-width:1024px){.filters{transform:translateX(13px)}}
 @media(max-width:1024px){.view-button{display:flex;top:3200px}}
 @media(max-width:1024px){.card-info{padding-bottom:2.608px}}
+
+.view-label{position:relative;overflow:hidden}
+.view-current,.view-next{display:block;transition:transform .45s cubic-bezier(.22,1,.36,1),opacity .3s}
+.view-next{position:absolute;left:0;right:0;text-align:center;transform:translateY(150%);opacity:0}
+.view-button:hover .view-current,.view-button:focus-visible .view-current{transform:translateY(-150%);opacity:0}
+.view-button:hover .view-next,.view-button:focus-visible .view-next{transform:translateY(0);opacity:1}
+.view-icon i{transition:transform .45s cubic-bezier(.22,1,.36,1);transition-delay:calc(var(--dot,0)*15ms)}
+.experience .view-button:hover .view-icon i,.experience .view-button:focus-visible .view-icon i{transform:none}
+.grid .view-button:hover .view-icon i:nth-child(1),.grid .view-button:hover .view-icon i:nth-child(3){transform:translateY(3px)}
+.grid .view-button:hover .view-icon i:nth-child(7),.grid .view-button:hover .view-icon i:nth-child(9){transform:translateY(-3px)}
+.grid .view-button:hover .view-icon i:nth-child(4){transform:translateX(3px)}
+.grid .view-button:hover .view-icon i:nth-child(6){transform:translateX(-3px)}
+@media(prefers-reduced-motion:reduce){.view-icon i,.view-current,.view-next{transition:none!important}}

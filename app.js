@@ -2,6 +2,7 @@ import {createExplorer} from './explorer.js';
 
 const $=s=>document.querySelector(s);
 const data=await fetch('/data.json').then(r=>{if(!r.ok)throw new Error('Product data could not load');return r.json()});
+document.querySelectorAll('.view-icon i').forEach((dot,index)=>dot.style.setProperty('--dot',index));
 const state={view:'experience',color:null,types:new Set(),min:6,max:29,focused:null};
 const collectionUrl=name=>'/collections/'+name+'/';
 const explorer=createExplorer($('#explorer'),{desktop:data.desktop,mobile:data.mobile,onSelect:item=>location.assign(collectionUrl(item.data.collectionSlug)),onHover:(item,position)=>{
@@ -51,7 +52,7 @@ function setView(view){
  closeFocus();toggleMenu(false);toggleFilters(false);state.view=view;
  document.body.className=view;
  $('#collections').hidden=view!=='grid';$('#explorer').hidden=view==='grid';explorer.setActive(view!=='grid');
- $('.view-label').textContent=view==='grid'?'grid view':'experience view';$('.view-button').setAttribute('aria-label',view==='grid'?'grid view':'experience view');
+ $('.view-current').textContent=view==='grid'?'grid view':'experience view';$('.view-next').textContent=view==='grid'?'experience view':'grid view';$('.view-button').setAttribute('aria-label',view==='grid'?'grid view':'experience view');
  $('.product-tooltip').hidden=true;window.scrollTo({top:0,behavior:'instant'});
  applyFilters();
  const el=view==='grid'?$('#collections'):$('#explorer');

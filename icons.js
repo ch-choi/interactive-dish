@@ -19,7 +19,6 @@ for(const selector of ['.menu-icon','.menu-button_icon','.ac-menu-icon'])for(con
  slot.replaceChildren(icon('menu'),icon('close'));slot.classList.add('ui-menu-slot');
 }
 for(const slot of document.querySelectorAll('.filter-icon'))slot.replaceChildren(icon('filter'));
-for(const slot of document.querySelectorAll('.view-icon'))slot.replaceChildren(icon('grid'));
 for(const [selector,name] of [
  ['.close-icon,.ac-dialog-close,[data-lightbox="close"]','close'],
  ['.w-slider-arrow-left,[data-slide-prev],[data-lightbox="prev"]','left'],
