@@ -24,4 +24,4 @@ button:focus-visible,a:focus-visible,[role=button]:focus-visible{outline:2px sol
 @media(max-width:991px){.horizontal-scroll_section-height{height:auto!important}.horizontal-scroll_stickey-element{position:relative;height:auto;overflow:visible}.horizontal-scroll_track{transform:none!important;width:100%}.horizontal-scroll_track-list{display:block;width:100%}.horizontal-scroll_track-list>section{width:100%;height:auto}.menu.is-open .menu-links{flex-wrap:wrap}.w-slider-arrow-left,.w-slider-arrow-right{display:flex!important}.slider-images{touch-action:pan-y}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 
-.hero_sub-text-wrap h2{white-space:normal!important}
+html body .hero_sub-text-wrap h2.heading-style-32px{white-space:normal!important}
