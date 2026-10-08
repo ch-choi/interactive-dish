@@ -1,0 +1,25 @@
+[hidden]{display:none!important}
+.page-transition,.image-mask{display:none!important}
+button:focus-visible,a:focus-visible,[role=button]:focus-visible{outline:2px solid currentColor;outline-offset:5px}
+.menu-button{cursor:pointer}
+.menu.is-open .menu-links{display:flex;opacity:1;visibility:visible;pointer-events:auto}
+.menu.is-open .menu-button_text{display:none}
+.menu.is-open .menu-button{border-radius:50%;margin-right:1em}
+.menu.is-open .menu-button_line.is-top{transform:translateY(3px) rotate(45deg)}
+.menu.is-open .menu-button_line.is-center{opacity:0}
+.menu.is-open .menu-button_line.is-bottom{transform:translateY(-3px) rotate(-45deg)}
+.hero-collection_img-overlay{display:none}
+.w-slider-mask{display:flex;overflow:hidden;touch-action:pan-y}
+.w-slider-mask>.w-slide{flex:0 0 100%;width:100%;transition:transform .5s ease}
+.w-slider-mask>.w-slide.w-condition-invisible{display:none!important}
+.product-open{overflow:hidden}
+.lightbox-wrap.is-open{display:flex;visibility:visible;opacity:1;pointer-events:auto;z-index:100000000;position:fixed;inset:0;background:#f5f6ee}
+.lightbox-wrap.is-open .lightbox-img__item{display:flex;opacity:1;visibility:visible}
+.lightbox-wrap.is-open .lightbox-nav{opacity:1;visibility:visible;z-index:2}
+.lightbox-wrap.is-open .lightbox-img{transform:none;opacity:1}
+.lightbox-nav__button{cursor:pointer}
+.hero-collection_title h2,.c-product_text{overflow:visible}
+[data-splittext]{white-space:normal!important}
+@media(min-width:992px){.horizontal-scroll_stickey-element{position:sticky;top:0;height:100vh;overflow:hidden}.horizontal-scroll_track{will-change:transform}.horizontal-scroll_track-list{display:flex;flex-wrap:nowrap;width:max-content}.horizontal-scroll_track-list>section{flex-shrink:0}}
+@media(max-width:991px){.horizontal-scroll_section-height{height:auto!important}.horizontal-scroll_stickey-element{position:relative;height:auto;overflow:visible}.horizontal-scroll_track{transform:none!important;width:100%}.horizontal-scroll_track-list{display:block;width:100%}.horizontal-scroll_track-list>section{width:100%;height:auto}.menu.is-open .menu-links{flex-wrap:wrap}.w-slider-arrow-left,.w-slider-arrow-right{display:flex!important}.slider-images{touch-action:pan-y}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}

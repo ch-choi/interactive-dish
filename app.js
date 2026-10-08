@@ -3,7 +3,7 @@ import {createExplorer} from './explorer.js';
 const $=s=>document.querySelector(s);
 const data=await fetch('/data.json').then(r=>{if(!r.ok)throw new Error('Product data could not load');return r.json()});
 const state={view:'experience',color:null,types:new Set(),min:6,max:29,focused:null};
-const collectionUrl=name=>'https://www.palmer-dinnerware.com/collections/'+name;
+const collectionUrl=name=>'/collections/'+name+'/';
 const explorer=createExplorer($('#explorer'),{desktop:data.desktop,mobile:data.mobile,onSelect:item=>location.assign(collectionUrl(item.data.collectionSlug)),onHover:(item,position)=>{
  const tip=$('.product-tooltip');
  if(!item||state.focused||innerWidth<=1024){tip.hidden=true;return;}
