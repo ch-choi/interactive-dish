@@ -38,3 +38,9 @@ html body .hero_sub-text-wrap h2.heading-style-32px{white-space:normal!important
 .menu.is-open .menu-link{transform:none;pointer-events:auto}
 .menu.is-open .menu-button{left:0}
 @media(max-width:991px){.menu.is-open .menu-links{height:auto}.menu.is-open .menu-link{height:3.5em}}
+
+.menu.is-open .menu-button{width:3em;height:3em;flex:0 0 3em;margin-right:1em;overflow:visible;justify-content:center;align-items:center;background:#21221f;color:#f5f6ee}
+.menu.is-open .menu-button_icon{width:100%;height:100%;margin:0;padding:0;display:flex;flex-direction:column;align-items:center;justify-content:center;border:0;border-radius:50%;overflow:visible}
+.menu.is-open .menu-button_line{width:1.2em;flex-shrink:0;background:#f5f6ee}
+
+.menu.is-open .menu-links{margin-left:0!important}
