@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width,initial-scale=1">
+ <meta name="theme-color" content="#f5f6ee">
+ <title>Palmer - Explore Palmer's Dinnerware Collections</title>
+ <meta name="description" content="Explore Palmer dinnerware collections. Rich colors and beautifully textured finishes transform every meal into a dish worth celebrating.">
+ <link rel="icon" href="/assets/677d447812debfcf97f8e340_palmer-favicon.jpg">
+ <link rel="preload" as="font" type="font/woff2" href="/assets/677ba97a966c5f89959d2990_TWKLausanne-300.woff2" crossorigin>
+ <link rel="stylesheet" href="/app.css">
+ <link rel="stylesheet" href="/cookie.css">
+</head>
+<body class="experience">
+ <a class="logo" href="/" aria-label="Homepage link"><img src="/assets/8a338060b3d9d208.svg" alt="Palmer" width="120" height="40"></a>
+ <main>
+  <div id="explorer" aria-label="Explore Palmer dinnerware" tabindex="0"></div>
+  <section id="collections" hidden>
+   <header class="hero">
+    <h1>Explore Palmer<br class="desktop-break"> dinnerware collections</h1>
+    <p>Our collection is designed to engage all of the senses. Rich colors and beautifully textured finishes transform every meal into a dish worth celebrating.</p>
+   </header>
+   <div class="collection-grid"></div>
+  </section>
+ </main>
+ <button class="view-button" aria-label="experience view"><span class="view-icon" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="view-label">experience view</span></button>
+ <nav class="dock" aria-label="Main menu">
+  <div class="menu-group">
+   <button class="menu-toggle" aria-expanded="false" aria-label="menu"><span class="menu-icon" aria-hidden="true"><i></i><i></i><i></i></span><span class="menu-label">menu</span></button>
+   <div class="menu-links" hidden><a href="/" class="current">collections</a><a href="https://www.palmer-dinnerware.com/about">about</a><a href="https://www.palmer-dinnerware.com/contact">contact</a></div>
+  </div>
+  <button class="filter-toggle" aria-expanded="false"><span class="filter-icon" aria-hidden="true"><i></i><i></i><i></i></span><span>filter</span></button>
+  <div class="filters" hidden>
+   <button class="close-filters close-icon" aria-label="Close filters"></button>
+   <div class="filter-category" data-category="color"><button class="category-toggle" aria-expanded="false">color <span>+</span></button><div class="color-options options" hidden></div></div>
+   <div class="filter-category" data-category="type"><button class="category-toggle" aria-expanded="false">type <span>+</span></button><div class="type-options options" hidden></div></div>
+   <div class="filter-category" data-category="size"><button class="category-toggle" aria-expanded="false">⌀ size <span>+</span></button><div class="size-options options" hidden><span class="min-value">⌀ 6 cm</span><div class="range"><input id="min-size" aria-label="Minimum diameter" type="range" min="6" max="29" value="6" step=".5"><input id="max-size" aria-label="Maximum diameter" type="range" min="6" max="29" value="29" step=".5"></div><span class="max-value">⌀ 29 cm</span></div></div>
+   <button class="reset-filters" hidden><img src="/assets/67d94597fe3ef2de68d3e639_Vector.svg" alt="">reset</button>
+  </div>
+ </nav>
+ <div class="zoom-controls"><span>Drag to explore</span><button aria-label="Zoom out" class="zoom-out">−</button><button aria-label="Zoom in" class="zoom-in">+</button></div>
+ <div class="product-tooltip" hidden><img src="/assets/afaedebafa62d918.svg" alt=""><span></span></div>
+ <section id="focus" hidden aria-label="Product details" role="dialog" aria-modal="true">
+  <div class="focus-panel">
+   <h2></h2>
+   <div class="focus-products" tabindex="0" aria-label="Collection products"></div>
+   <div class="focus-thumbnails"></div>
+   <p class="product-description"></p>
+   <div class="focus-cta"><a href="#"><span>explore collection</span><img src="/assets/177401944a57416b.svg" alt=""></a></div>
+  </div>
+  <button class="close-focus close-icon" aria-label="Close product details"></button>
+ </section>
+ <script src="/cookie.js" defer></script>
+ <script src="/app.js" type="module"></script>
+</body>
+</html>

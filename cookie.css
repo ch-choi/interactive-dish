@@ -1,0 +1,442 @@
+/* Palmer cookie notice. Every selector is prefixed to avoid affecting the page. */
+html.palmer-cookie-open,
+body.palmer-cookie-open {
+  overflow: hidden;
+}
+
+.palmer-cookie,
+.palmer-cookie * {
+  box-sizing: border-box;
+}
+
+.palmer-cookie {
+  position: fixed;
+  z-index: 2147483000;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  color: #171717;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.palmer-cookie[hidden],
+.palmer-cookie__panel[hidden],
+.palmer-cookie__customize[hidden],
+.palmer-cookie__button[hidden] {
+  display: none !important;
+}
+
+.palmer-cookie__backdrop {
+  position: absolute;
+  inset: 0;
+  background: #f5f6ee;
+  opacity: 0.2;
+}
+
+.palmer-cookie__dialog {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  width: min(920px, 100%);
+  height: 377px;
+  min-height: 377px;
+  max-height: calc(100dvh - 32px);
+  overflow: hidden;
+  background: #fff;
+  border: 0;
+  border-radius: 11px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.13);
+  outline: none;
+  animation: palmer-cookie-enter 180ms ease-out both;
+}
+
+.palmer-cookie.is-leaving .palmer-cookie__dialog {
+  animation: palmer-cookie-leave 160ms ease-in both;
+}
+
+.palmer-cookie__header {
+  display: flex;
+  align-items: center;
+  flex: 0 0 78px;
+  height: 78px;
+  padding: 24px;
+}
+
+.palmer-cookie__logo {
+  display: block;
+  width: 90px;
+  height: 30px;
+  object-fit: fill;
+  object-position: left center;
+}
+
+.palmer-cookie__tabs {
+  display: flex;
+  flex: 0 0 48px;
+  gap: 0;
+  height: 48px;
+  min-height: 48px;
+  padding: 0;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+.palmer-cookie__tab {
+  position: relative;
+  display: grid;
+  flex: 1 1 33.333%;
+  place-items: center;
+  min-width: 0;
+  min-height: 48px;
+  padding: 0 8px;
+  color: #262626;
+  font: bold 14px/21px Arial, Helvetica, sans-serif;
+  white-space: nowrap;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.palmer-cookie__tab::after {
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: 2px;
+  content: '';
+  background: transparent;
+}
+
+.palmer-cookie__tab:hover,
+.palmer-cookie__tab:focus-visible {
+  color: #000;
+}
+
+.palmer-cookie__tab:focus-visible,
+.palmer-cookie__button:focus-visible,
+.palmer-cookie__switch:focus-visible {
+  outline: 2px solid #af005d;
+  outline-offset: 3px;
+}
+
+.palmer-cookie__tab[aria-selected='true'] {
+  color: #000;
+}
+
+.palmer-cookie__tab[aria-selected='true']::after {
+  background: #000;
+}
+
+.palmer-cookie__content {
+  flex: 0 0 164px;
+  height: 164px;
+  min-height: 0;
+  overflow: auto;
+  padding: 24px;
+  scrollbar-color: #c8c8c8 transparent;
+  scrollbar-width: thin;
+}
+
+.palmer-cookie__panel {
+  min-height: 0;
+}
+
+.palmer-cookie__title {
+  margin: 0 0 8px;
+  color: #000;
+  font: bold 14px/21px Arial, Helvetica, sans-serif;
+  letter-spacing: 0;
+}
+
+.palmer-cookie__description {
+  max-width: none;
+  margin: 0;
+  color: #000;
+  font: 14px/21px Arial, Helvetica, sans-serif;
+}
+
+.palmer-cookie__description + .palmer-cookie__description {
+  margin-top: 13px;
+}
+
+.palmer-cookie__actions {
+  display: grid;
+  flex: 0 0 86px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  height: 86px;
+  padding: 24px;
+  background: #f8f9fa;
+  border-top: 1px solid #e5e5e5;
+}
+
+.palmer-cookie__button {
+  width: 100%;
+  height: 38px;
+  min-width: 0;
+  min-height: 38px;
+  padding: 0 12px;
+  font: bold 14px/21px Arial, Helvetica, sans-serif;
+  border: 0;
+  border-radius: 11px;
+  cursor: pointer;
+  transition: color 140ms ease, background-color 140ms ease;
+}
+
+.palmer-cookie__button--secondary {
+  color: #000;
+  background: #fff;
+}
+
+.palmer-cookie__button--secondary:hover {
+  color: #000;
+  background: #f0f0f0;
+}
+
+.palmer-cookie__button--primary {
+  color: #fff;
+  background: #982064;
+}
+
+.palmer-cookie__button--primary:hover {
+  background: #861b57;
+}
+
+.palmer-cookie__customize {
+  margin-top: 22px;
+  padding-top: 20px;
+  border-top: 1px solid #e9e9e9;
+}
+
+.palmer-cookie__customize-title {
+  margin: 0 0 3px;
+  color: #161616;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.palmer-cookie__customize-intro {
+  margin: 0 0 14px;
+  color: #555;
+  font-size: 13px;
+}
+
+.palmer-cookie__categories {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 22px;
+}
+
+.palmer-cookie__category {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 64px;
+  padding: 11px 0;
+  border-top: 1px solid #efefef;
+}
+
+.palmer-cookie__category-copy {
+  min-width: 0;
+}
+
+.palmer-cookie__category-title {
+  margin: 0 0 2px;
+  color: #282828;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.palmer-cookie__category-description {
+  max-width: 330px;
+  margin: 0;
+  color: #666;
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.palmer-cookie__switch {
+  position: relative;
+  flex: 0 0 auto;
+  width: 38px;
+  height: 22px;
+  margin-top: 2px;
+  padding: 0;
+  background: #c9c9c9;
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background-color 140ms ease;
+}
+
+.palmer-cookie__switch.is-checked {
+  background: #af005d;
+}
+
+.palmer-cookie__switch:disabled {
+  cursor: not-allowed;
+  opacity: 0.75;
+}
+
+.palmer-cookie__switch-thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.22);
+  transition: transform 140ms ease;
+}
+
+.palmer-cookie__switch.is-checked .palmer-cookie__switch-thumb {
+  transform: translateX(16px);
+}
+
+.palmer-cookie__details {
+  overflow: hidden;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+}
+
+.palmer-cookie__details-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 43px;
+  padding: 9px 14px;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.palmer-cookie__details-row:last-child {
+  border-bottom: 0;
+}
+
+.palmer-cookie__details-label {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.palmer-cookie__details-value {
+  color: #6b6b6b;
+  font-size: 12px;
+}
+
+@keyframes palmer-cookie-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes palmer-cookie-leave {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(8px) scale(0.985);
+  }
+}
+
+@media (max-width: 640px) {
+  .palmer-cookie {
+    align-items: center;
+    padding: 12px;
+  }
+
+  .palmer-cookie__dialog {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    max-height: calc(100dvh - 24px);
+    border-radius: 14px;
+  }
+
+  .palmer-cookie__header {
+    flex-basis: 64px;
+    height: 64px;
+    min-height: 64px;
+    padding: 17px 20px;
+  }
+
+  .palmer-cookie__logo {
+    width: 90px;
+    height: 30px;
+  }
+
+  .palmer-cookie__tabs {
+    flex-basis: 44px;
+    height: 44px;
+    min-height: 44px;
+  }
+
+  .palmer-cookie__tab {
+    min-height: 44px;
+    font-size: 13px;
+  }
+
+  .palmer-cookie__content {
+    flex: 1 1 auto;
+    height: auto;
+    max-height: 46vh;
+    padding: 16px 20px 12px;
+  }
+
+  .palmer-cookie__title {
+    margin-bottom: 7px;
+    font-size: 14px;
+  }
+
+  .palmer-cookie__description {
+    font-size: 14px;
+    line-height: 21px;
+  }
+
+  .palmer-cookie__actions {
+    flex: 0 0 auto;
+    height: auto;
+    min-height: 0;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 16px 20px 20px;
+  }
+
+  .palmer-cookie__button {
+    width: 100%;
+    height: 38px;
+    min-height: 38px;
+  }
+
+  .palmer-cookie__categories {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .palmer-cookie__category-description {
+    max-width: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .palmer-cookie__dialog,
+  .palmer-cookie__button,
+  .palmer-cookie__switch,
+  .palmer-cookie__switch-thumb {
+    animation: none;
+    transition: none;
+  }
+}
