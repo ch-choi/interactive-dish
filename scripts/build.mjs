@@ -1,5 +1,5 @@
 import {cp,mkdir,readFile,writeFile} from 'node:fs/promises';
-const files=['index.html','app.css','app.js','explorer.js','cookie.css','cookie.js','data.json','collection-pages.js','collection-pages.css','about-contact.js','about-contact.css'];
+const files=['icons.js','icons.css','index.html','app.css','app.js','explorer.js','cookie.css','cookie.js','data.json','collection-pages.js','collection-pages.css','about-contact.js','about-contact.css'];
 await mkdir('dist',{recursive:true});
 for(const file of files){
  const text=await readFile(file,'utf8');

@@ -72,8 +72,8 @@ for(const collection of data.collections){
  for(const src of collection.images){
   const p=productFor(src,collection.name);const button=document.createElement('a');button.className='card-product';button.draggable=false;button.href=href;button.setAttribute('aria-label',p?.data.name||collection.name);button.append(imageNode(src,p?.data.name||collection.name));products.append(button);
  }
- const link=document.createElement('a');link.className='card-explore';link.href=href;link.setAttribute('aria-label',`Explore ${collection.name}`);const label=document.createElement('span');label.textContent='explore';link.append(label,imageNode('/assets/177401944a57416b.svg',''));
- const hint=document.createElement('div');hint.className='card-hint';hint.append(imageNode('/assets/67d948edf9c48ad188dd03ce_radix-icons_size.svg',''));const hintText=document.createElement('span');hintText.textContent='Drag for more';hint.append(hintText);
+ const link=document.createElement('a');link.className='card-explore';link.href=href;link.setAttribute('aria-label',`Explore ${collection.name}`);const label=document.createElement('span');label.textContent='explore';link.append(label,window.PalmerIcon('right'));
+ const hint=document.createElement('div');hint.className='card-hint';hint.append(window.PalmerIcon('expand'));const hintText=document.createElement('span');hintText.textContent='Drag for more';hint.append(hintText);
  const info=document.createElement('div');info.className='card-info';const name=document.createElement('span');name.textContent=collection.name;const count=document.createElement('span');count.textContent=`${collection.count} Products`;info.append(name,count);
  surface.append(products,link,hint);card.append(surface,info);$('.collection-grid').append(card);
  let start=null,moved=false;

@@ -1,0 +1,15 @@
+.ui-icon{display:inline-flex!important;align-items:center;justify-content:center;width:18px;height:18px;flex:0 0 18px;line-height:0;vertical-align:middle;pointer-events:none;color:inherit}
+.ui-icon svg{display:block;width:100%;height:100%;overflow:visible}
+.ui-menu-slot{position:relative!important;display:flex!important;align-items:center!important;justify-content:center!important;padding:0!important;flex-shrink:0}
+.ui-menu-slot>.ui-icon{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)}
+.ui-menu-slot>.ui-icon-close{display:none!important}
+[aria-expanded=true]>.ui-menu-slot>.ui-icon-menu,.menu.is-open .ui-menu-slot>.ui-icon-menu{display:none!important}
+[aria-expanded=true]>.ui-menu-slot>.ui-icon-close,.menu.is-open .ui-menu-slot>.ui-icon-close{display:inline-flex!important}
+.menu.is-open .menu-button::before,.menu.is-open .menu-button::after,.ui-icon-control::before,.ui-icon-control::after{content:none!important}
+.ui-icon-control{display:inline-flex!important;align-items:center!important;justify-content:center!important;padding:0!important;line-height:1!important}
+.lightbox-nav .ui-icon-control{width:44px;height:44px;color:inherit}
+.ac-dialog-close.ui-icon-control{width:44px;height:44px}
+.card-explore>.ui-icon,.focus-cta a>.ui-icon{width:3em;height:3em;flex-basis:3em;padding:1em;border-left:1px solid #f5f6ee55;box-sizing:border-box}
+.ac-menu-icon .ui-icon,.menu-icon .ui-icon,.menu-button_icon .ui-icon{color:#f5f6ee!important}
+.w-slider-arrow-right.ui-icon-control{transform:none!important}
+.ui-icon svg{color:inherit!important}
