@@ -13,7 +13,7 @@ button:focus-visible,a:focus-visible,[role=button]:focus-visible{outline:2px sol
 .w-slider-mask>.w-slide{flex:0 0 100%;width:100%;transition:transform .5s ease}
 .w-slider-mask>.w-slide.w-condition-invisible{display:none!important}
 .product-open{overflow:hidden}
-.lightbox-wrap.is-open{display:flex;visibility:visible;opacity:1;pointer-events:auto;z-index:100000000;position:fixed;inset:0;background:#f5f6ee}
+.lightbox-wrap.is-open{display:flex;visibility:visible;opacity:1;pointer-events:auto;z-index:100000000;position:fixed;inset:0;background:rgba(15,20,24,.8)}
 .lightbox-wrap.is-open .lightbox-img__item{display:flex;opacity:1;visibility:visible}
 .lightbox-wrap.is-open .lightbox-nav{opacity:1;visibility:visible;z-index:2}
 .lightbox-wrap.is-open .lightbox-img{transform:none;opacity:1}
@@ -25,3 +25,10 @@ button:focus-visible,a:focus-visible,[role=button]:focus-visible{outline:2px sol
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 
 html body .hero_sub-text-wrap h2.heading-style-32px{white-space:normal!important}
+
+.lightbox-wrap.is-open .lightbox-img{animation:product-reveal .45s ease both}
+.lightbox-wrap.is-open .lightbox-nav{color:#fff}
+@keyframes product-reveal{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:scale(1)}}
+
+.product-open .menu{visibility:hidden}
+.lightbox-wrap{touch-action:pan-y}

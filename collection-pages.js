@@ -80,8 +80,11 @@ const triggers = [...document.querySelectorAll('[data-lightbox="trigger"]')];
 let selected = 0;
 let restoreFocus;
 if (lightbox) {
+  lightbox.querySelectorAll('img').forEach(image => { image.draggable = false; });
   lightbox.hidden = true;
   lightbox.setAttribute('aria-label', 'Collection product photos');
+  lightbox.setAttribute('role', 'dialog');
+  lightbox.setAttribute('aria-modal', 'true');
   const show = next => {
     selected = (next + items.length) % items.length;
     items.forEach((item, i) => { item.hidden = i !== selected; });
@@ -101,6 +104,13 @@ if (lightbox) {
   lightbox.querySelector('[data-lightbox="close"]').addEventListener('click', close);
   lightbox.querySelector('[data-lightbox="prev"]').addEventListener('click', () => show(selected - 1));
   lightbox.querySelector('[data-lightbox="next"]').addEventListener('click', () => show(selected + 1));
+  let touchStart;
+  lightbox.addEventListener('pointerdown', event => { touchStart = event.clientX; });
+  lightbox.addEventListener('pointerup', event => {
+    if (touchStart != null && Math.abs(event.clientX - touchStart) > 50) show(selected + (event.clientX < touchStart ? 1 : -1));
+    touchStart = null;
+  });
+  lightbox.addEventListener('pointercancel', () => { touchStart = null; });
   document.addEventListener('keydown', event => {
     if (lightbox.hidden) return;
     if (event.key === 'Escape') close();
