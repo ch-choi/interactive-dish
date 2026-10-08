@@ -32,3 +32,9 @@ html body .hero_sub-text-wrap h2.heading-style-32px{white-space:normal!important
 
 .product-open .menu{visibility:hidden}
 .lightbox-wrap{touch-action:pan-y}
+
+.menu-links{visibility:hidden;pointer-events:none}
+.menu.is-open .menu-links{width:auto;height:3em;overflow:visible}
+.menu.is-open .menu-link{transform:none;pointer-events:auto}
+.menu.is-open .menu-button{left:0}
+@media(max-width:991px){.menu.is-open .menu-links{height:auto}.menu.is-open .menu-link{height:3.5em}}

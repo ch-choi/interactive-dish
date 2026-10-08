@@ -5,14 +5,16 @@ if (menuButton) {
   menuButton.tabIndex = 0;
   menuButton.setAttribute('aria-label', 'Menu');
   menuButton.setAttribute('aria-expanded', 'false');
-  const toggle = () => {
-    const open = menu.classList.toggle('is-open');
+  const setOpen = open => {
+    menu.classList.toggle('is-open', open);
     menuButton.setAttribute('aria-expanded', String(open));
   };
-  menuButton.addEventListener('click', toggle);
+  menuButton.addEventListener('click', () => setOpen(!menu.classList.contains('is-open')));
   menuButton.addEventListener('keydown', event => {
-    if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); toggle(); }
+    if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); setOpen(!menu.classList.contains('is-open')); }
   });
+  document.addEventListener('keydown', event => { if (event.key === 'Escape') setOpen(false); });
+  document.addEventListener('pointerdown', event => { if (!menu.contains(event.target)) setOpen(false); });
 }
 
 for (const slider of document.querySelectorAll('.w-slider')) {

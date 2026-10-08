@@ -14,10 +14,15 @@ const explorer=createExplorer($('#explorer'),{desktop:data.desktop,mobile:data.m
 function matching(item){const p=item.data;return(!state.color||p.color===state.color)&&(!state.types.size||state.types.has(p.type))&&Number(p.size)>=state.min&&Number(p.size)<=state.max;}
 function applyFilters(){
  explorer.filter(matching);
+ for(const card of document.querySelectorAll('.collection-card')){
+  let count=0;
+  for(const link of card.querySelectorAll('.card-product')){const item=productFor(link.querySelector('img').getAttribute('src'),card.dataset.collection);link.hidden=!item||!matching(item);if(!link.hidden)count++;}
+  card.hidden=count===0;
+ }
  $('.reset-filters').hidden=!(state.color||state.types.size||state.min!==6||state.max!==29);
  $('.min-value').textContent=`⌀ ${state.min} cm`;$('.max-value').textContent=`⌀ ${state.max} cm`;
- for(const b of document.querySelectorAll('[data-color]'))b.setAttribute('aria-pressed',String(b.dataset.color===state.color));
- for(const b of document.querySelectorAll('[data-type]'))b.setAttribute('aria-pressed',String(state.types.has(b.dataset.type)));
+ for(const b of document.querySelectorAll('.color-options [data-color]'))b.setAttribute('aria-pressed',String(b.dataset.color===state.color));
+ for(const b of document.querySelectorAll('.type-options [data-type]'))b.setAttribute('aria-pressed',String(state.types.has(b.dataset.type)));
 }
 function resetFilters(){state.color=null;state.types.clear();state.min=6;state.max=29;$('#min-size').value='6';$('#max-size').value='29';applyFilters();}
 function toggleFilters(open){$('.filters').hidden=!open;$('.filter-toggle').hidden=open;$('.filter-toggle').setAttribute('aria-expanded',String(open));if(open)toggleMenu(false);}
@@ -48,6 +53,7 @@ function setView(view){
  $('#collections').hidden=view!=='grid';$('#explorer').hidden=view==='grid';explorer.setActive(view!=='grid');
  $('.view-label').textContent=view==='grid'?'grid view':'experience view';$('.view-button').setAttribute('aria-label',view==='grid'?'grid view':'experience view');
  $('.product-tooltip').hidden=true;window.scrollTo({top:0,behavior:'instant'});
+ applyFilters();
  const el=view==='grid'?$('#collections'):$('#explorer');
  if(!matchMedia('(prefers-reduced-motion: reduce)').matches)el.animate([{opacity:0,transform:'translateY(12px)'},{opacity:1,transform:'translateY(0)'}],{duration:800,easing:'cubic-bezier(.22,1,.36,1)'});
 }
@@ -58,7 +64,7 @@ $('.logo').addEventListener('click',e=>{e.preventDefault();setView('experience')
 function imageNode(src,alt){const img=document.createElement('img');img.src=src;img.alt=alt;img.draggable=false;return img;}
 function productFor(src,name){return data.desktop.find(p=>p.src===src&&(!name||p.data.collection===name))||data.desktop.find(p=>p.src===src);}
 for(const collection of data.collections){
- const card=document.createElement('article');card.className='collection-card';
+ const card=document.createElement('article');card.className='collection-card';card.dataset.collection=collection.name;
  const surface=document.createElement('div');surface.className='card-surface';
  const products=document.createElement('div');products.className='card-products';products.tabIndex=0;products.setAttribute('aria-label',`${collection.name} products`);
  const first=productFor(collection.images[0],collection.name);

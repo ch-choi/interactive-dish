@@ -2,12 +2,14 @@ const page = document.querySelector('.ac-page');
 if (!page) throw new Error('About/Contact page root is missing');
 
 for (const toggle of document.querySelectorAll('.ac-menu-toggle')) {
+  toggle.setAttribute('aria-label', 'Menu');
   const menu = document.getElementById(toggle.getAttribute('aria-controls'));
   const setOpen = open => {
     toggle.setAttribute('aria-expanded', String(open));
     menu.hidden = !open;
   };
   toggle.addEventListener('click', () => setOpen(menu.hidden));
+  document.addEventListener('pointerdown', event => { if (!toggle.parentElement.contains(event.target)) setOpen(false); });
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape') setOpen(false);
   });
