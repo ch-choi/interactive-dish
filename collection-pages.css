@@ -44,3 +44,9 @@ html body .hero_sub-text-wrap h2.heading-style-32px{white-space:normal!important
 .menu.is-open .menu-button_line{width:1.2em;flex-shrink:0;background:#f5f6ee}
 
 .menu.is-open .menu-links{margin-left:0!important}
+
+.menu.is-open .menu-button_icon{background:transparent}
+.menu.is-open .menu-button_line{display:none!important}
+.menu.is-open .menu-button::before,.menu.is-open .menu-button::after{content:"";position:absolute;left:50%;top:50%;width:1.2em;height:1px;background:#f5f6ee;border-radius:1px;pointer-events:none}
+.menu.is-open .menu-button::before{transform:translate(-50%,-50%) rotate(45deg)}
+.menu.is-open .menu-button::after{transform:translate(-50%,-50%) rotate(-45deg)}

@@ -40,3 +40,11 @@ html:has(.ac-page){font-size:16px}
 
 .ac-menu-toggle .ac-menu-label{color:var(--ac-bg)!important}
 .ac-menu-toggle .ac-menu-icon{flex-shrink:0}
+
+.ac-menu-toggle{padding:0;border:0}
+.ac-menu-icon{position:relative;box-sizing:border-box}
+.ac-menu-icon i{position:absolute;left:50%;top:50%;margin:0;transform:translate(-50%,-50%);height:1px}
+.ac-menu-icon i:first-child{transform:translate(-50%,calc(-50% - 3px))}
+.ac-menu-icon i:last-child{transform:translate(-50%,calc(-50% + 3px))}
+.ac-menu-toggle[aria-expanded=true] i:first-child{transform:translate(-50%,-50%) rotate(45deg)}
+.ac-menu-toggle[aria-expanded=true] i:last-child{transform:translate(-50%,-50%) rotate(-45deg)}
